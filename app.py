@@ -35,7 +35,7 @@ if uploaded_file is not None:
 
     # Preprocess image
     image_resized = image.resize((224, 224))
-    image_array = np.array(image_resized) / 255.0
+    image_array = np.array(image_resized).astype("float32")
     image_array = np.expand_dims(image_array, axis=0)
 
     # Prediction
